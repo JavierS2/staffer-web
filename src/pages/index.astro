@@ -1,10 +1,40 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Card from '../components/Card/Card.astro';
 ---
 
 <Layout>
-	
+	<h1>Welcome to Staffer</h1>
+	<img src="/images/Staffer_Header_V2.png" alt="Staffer Header" class="full-width-image">
+	<h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea aliquam ipsam corporis harum consectetur delectus laborum vero, maxime minima! Veritatis accusantium consequuntur quasi, pariatur accusamus eveniet dicta minima. Perferendis, in?</h1>
+	<img src="/images/STAFFER_AD_2.28.png" alt="Staffer" class="full-width-image">
+	<Card
+        imageSrc="/images/Staffer_Header_V2.png"
+        imageAlt="Imagen de ejemplo"
+        title="Título de la tarjeta"
+        description="Esta es una descripción de ejemplo para la tarjeta."
+      />
 </Layout>
+
+<style>
+	.images {
+
+		display: block;	
+	}
+	.non-full {
+		width: 300px;
+		height: auto;
+		display: block;
+	}
+	.full-width-image {
+	width: 80vw;
+	height: auto;
+	display: flex;
+	}
+
+	h1 {
+		font-size: 3rem;
+		padding-top: 80px;
+		text-align: center;
+	}
+</style>

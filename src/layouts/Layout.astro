@@ -1,20 +1,25 @@
 ---
-import Navbar from '../components/Navbar/Navbar';
+import Navbar from '../components/Navbar/Navbar.astro';
+import Footer from '../components/Footer/Footer.astro';
 ---
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Sitio Web</title>
+    <title>Staffer | Home</title>
 </head>
 <body>
-    <!-- Incluye la barra de navegación -->
-    <Navbar client:load />
-
-    <footer>
-        <p>&copy; 2023 Mi Sitio Web</p>
-    </footer>
+    <Navbar/>
+    <slot></slot>
+    <Footer client:load/>
 </body>
 </html>
+
+<style>
+    main {
+        margin-top: 70px;
+    }
+    
+</style>
