@@ -1,14 +1,19 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import "../../styles/about.css"; 
 
-export default function SecondSection() {
+export default function AnimatedSubtitle() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const triggerHeight = window.innerHeight * 0.8;
-      if (window.scrollY > triggerHeight) {
-        setIsVisible(true);
+      const element = document.querySelector(".second-section");
+      if (element) {
+        const { top } = element.getBoundingClientRect();
+        if (top < triggerHeight) {
+          setIsVisible(true);
+        }
       }
     };
 
@@ -23,24 +28,45 @@ export default function SecondSection() {
       animate={isVisible ? { y: 0, opacity: 1 } : {}}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <div className="content-info">
-        <h2 className="subtitle">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde esse quos nihil 
-        soluta at necessitatibus optio maiores, provident aperiam saepe fuga ex voluptatibus
-        quasi eligendi voluptatem. Necessitatibus qui nisi culpa.
-        </h2>
-        <p className="description">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur nulla beatae 
-        consectetur sunt hic officia commodi. Necessitatibus aut recusandae dolor debitis
-        praesentium repellendus perferendis exercitationem voluptas illum placeat sequi
-        dignissimos eligendi quo corporis consequuntur eius quis ipsum a ea sit ad aliquid
-        neque, illo cumque? Quisquam ab accusantium nulla. Provident.
-        </p>
-        <div className="button-container">
-          <button className="custom-button">Haz clic</button>
+      <div className="content-wrapper">
+        <div className="content-info">
+          <motion.h2 
+            className="subtitle"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={isVisible ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate aperiam praesentium explicabo et quidem blanditiis atque sit odit rem tenetur, quisquam quos laboriosam id nostrum maiores quaerat enim asperiores porro.
+          </motion.h2>
+          <motion.p 
+            className="description"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={isVisible ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia voluptatem eaque voluptates deleniti, ut dolorum ipsa fugiat velit iusto recusandae deserunt aliquid ea quasi illum corrupti natus. Blanditiis dicta, fuga quibusdam quo fugiat sed, asperiores sint explicabo architecto recusandae alias dolore, illum facere nobis necessitatibus eligendi nemo. Odit laudantium necessitatibus eius harum magni praesentium enim est, dolore officiis totam corrupti quisquam dolorum quibusdam consequuntur, dolor numquam, culpa quidem soluta natus itaque velit voluptatem? Rerum beatae animi delectus earum, esse neque illum sequi autem quidem cupiditate excepturi dolorem modi eligendi pariatur facilis iste? Ab blanditiis unde officia. Nemo sit alias laudantium.
+          </motion.p>
+          <div className="button-container">
+            <motion.button 
+              className="custom-button"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
+              Haz clic
+            </motion.button>
+          </div>
         </div>
       </div>
       
+      {/* Imagen animada */}
+      <motion.div
+        className="image"
+        initial={{ opacity: 0, y: 50 }}
+        animate={isVisible ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 1, ease: "easeOut" }}
+      >
+        <img src="/images/staffer.lightpurple.png" alt="Staffer Light Purple" />
+      </motion.div>
     </motion.section>
   );
 }

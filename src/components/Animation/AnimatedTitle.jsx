@@ -1,9 +1,7 @@
 import { motion } from "framer-motion";
-import { h1 } from "framer-motion/client";
 import { useEffect, useState } from "react";
 
 const fullText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut fugiat pariatur a ipsam nulla doloribus ea quasi qui quo. Blanditiis, quod? Ratione libero assumenda quas pariatur, expedita consectetur dignissimos sapiente."; // Texto que se animará
-
 export default function AnimatedTitle() {
   const [displayedText, setDisplayedText] = useState("");
   const [index, setIndex] = useState(0);
@@ -13,7 +11,7 @@ export default function AnimatedTitle() {
       const timeout = setTimeout(() => {
         setDisplayedText((prev) => prev + fullText[index]);
         setIndex(index + 1);
-      }, 20);
+      }, 10);
       return () => clearTimeout(timeout);
     }
   }, [index]);
