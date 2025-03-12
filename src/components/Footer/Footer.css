@@ -21,7 +21,7 @@ body {
   width: 100%;
   background: #2F4435;
   min-height: 100px;
-  padding: 20px 50px;
+  padding: 0px 50px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
