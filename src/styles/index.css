@@ -1,21 +1,23 @@
 body {
-    background-color: #2F4435;
+    background-color: #F3E9D2;
     font-family: "EB Garamond", Garamond, serif;
+    color: #2F4435;;
 }
 
 .images {
-
     display: block;	
 }
+
 .non-full {
     width: 300px;
     height: auto;
     display: block;
 }
+
 .full-width-image {
-width: 80vw;
-height: auto;
-display: flex;
+    width: 80vw;
+    height: auto;
+    display: flex;
 }
 
 h1 {

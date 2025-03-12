@@ -1,10 +1,12 @@
 ---
 import AnimatedTitle from "../components/Animation/AnimatedTitle";
-import "../styles/about.css"; // Importamos los estilos
 import Navbar from "../components/Navbar/Navbar.astro";
 import AnimatedSubtitle from "../components/Animation/AnimatedSubtitle";
 import Footer from "../components/Footer/Footer.astro";
+
+import "../styles/about.css";
 ---
+
 <Navbar client:load/>
 <head>
   <title>About us</title>
@@ -14,7 +16,6 @@ import Footer from "../components/Footer/Footer.astro";
 </head>
 
 <body>
-
 	<section class="first-section">
     <div class="content-wrapper">
         <h1 class="title"><AnimatedTitle client:idle/></h1>

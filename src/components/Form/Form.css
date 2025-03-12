@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    --color-1: #2F4435;
+    --text-color: #F3E9D2; /* Ahora es el fondo */
+    --accent-color: #2c5838;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--color-1);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    padding: 20px;
+    gap: 10px;
+    width: 1000px;
+    margin: 80px auto 100px auto;
+}
+
+.box-info {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.box-info > h1 {
+    text-align: left;
+    letter-spacing: 5px;
+    color: var(--color-1); /* Ajuste para contraste */
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.data > p {
+    font-size: 1rem;
+    color: var(--color-1);
+}
+
+.data > p > i {
+    color: var(--accent-color);
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+.links {
+    display: flex;
+    gap: 15px;
+}
+
+.links > a {
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    background: var(--accent-color);
+    text-align: center;
+    transition: .2s;
+    border-radius: 5px;
+}
+
+.links > a > i {
+    color: var(--text-color);
+    line-height: 40px;
+    font-size: 20px;
+}
+
+.links > a:hover {
+    background: #23472f;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+}
+
+.input-box {
+    position: relative;
+}
+
+.input-box > input, .input-box > textarea {
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+    color: var(--color-1);
+    outline: none;
+    transition: .3s;
+}
+
+.input-box > input::placeholder, 
+.input-box > textarea::placeholder {
+    color: #4a4a4a;
+}
+
+.input-box > input:focus, 
+.input-box > textarea:focus {
+    border: 2px solid var(--accent-color);
+    animation: shake .2s;
+}
+
+.input-box > i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    color: rgba(0, 0, 0, 0.5);
+    transition: .3s;
+}
+
+.input-box > input:focus ~ i {
+    color: var(--accent-color);
+}
+
+form > button {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    background: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: .2s;
+}
+
+form > button:hover {
+    background: #23472f;
+}
+
+@keyframes shake { 
+    0%, 100% { transform: translateX(0); } 
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); } 
+    20%, 40%, 60%, 80% { transform: translateX(5px); } 
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .box-info {
+        gap: 15px;
+    }
+
+    .box-info > h1 {
+        font-size: 1.5rem;
+    }
+}
