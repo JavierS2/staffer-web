@@ -20,6 +20,13 @@ body {
   color: #2F4435;
 }
 
+.content-info {
+  max-width: 80%;
+  text-align: justify; /* Justifica el texto */
+  margin: 0 auto; /* Centra el contenedor en el div */
+  display: block; /* Asegura que ocupe toda la línea */
+}
+
 .second-section {
   margin: 80px 0;
   width: 100%; /* Asegura que la sección ocupe todo el ancho disponible */
@@ -47,7 +54,10 @@ body, html {
   margin-left: 0; /* Alinea el contenido a la izquierda */
 }
 
-
+.title, .subtitle, .description {
+  position: relative;
+  z-index: 1;
+}
 
 .subtitle,
 .description {
@@ -103,68 +113,27 @@ body, html {
   display: flex;
   justify-content: center; /* Centra horizontalmente */
   align-items: center; /* Centra verticalmente */
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
+  width: 100%; /* Asegura que no se desborde */
+  height: 100%; /* Ajusta la altura al contenedor */
+  max-width: 50%; /* Limita el tamaño en pantallas grandes */
+  flex-shrink: 0; /* Evita que se reduzca demasiado */
+  align-self: auto;
+  margin: auto 0;
 }
 
 .image img {
-  width: 75%;
-  max-width: 400px; /* Evita que crezca demasiado en pantallas grandes */
-  height: auto; /* Mantiene la proporción de la imagen */
+  width: 100%;
+  max-width: 400px; /* Tamaño máximo */
+  min-width: 150px; /* Evita que se haga muy pequeña */
+  height: auto; /* Mantiene la proporción */
   border-radius: 20%;
-  margin-top: 20%; /* Reduce el margen para mejor responsividad */
-  margin-right: 50%;
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  object-fit: contain;
 }
+
+
 
 /* Media queries para hacer la imagen más responsiva */
-@media (max-width: 1024px) {
-  .image img {
-    width: 60%;
-    max-width: 250px;
-    margin-top: 5%;
-    margin-right: 5%;
-  }
-}
-
-@media (max-width: 768px) {
-  .image img {
-    width: 50%;
-    max-width: 200px;
-    margin-top: 2%;
-    margin-right: 2%;
-  }
-}
-
-@media (max-width: 480px) {
-  .image img {
-    width: 80%;
-    max-width: 150px;
-    margin: 0 auto;
-  }
-}
-
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
-  .button-container {
-    justify-content: center; /* Centrado en móviles */
-  }
-
-  .custom-button {
-    width: 80%;
-    max-width: 250px;
-  }
-}
-
-@media (max-width: 480px) {
-  .custom-button {
-    width: 100%; /* Ocupará todo el ancho en móviles pequeños */
-  }
-}
-
-
 
 /*Animaciones en CSS*/
 .custom-button:hover {
@@ -174,31 +143,57 @@ body, html {
 
 .cursor {
   font-weight: bold;
-  color: #F3E9D2;
+  color: #2F4435;
   animation: blink 1s infinite;
 }
 
-@keyframes blink {
-  50% {
-      opacity: 0;
+@media (max-width: 950px) {
+  .second-section {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se acomoden en varias líneas */
+    justify-content: center; /* Centra el contenido */
+    text-align: center;
+  }
+
+  .content-info {
+    order: 1; /* Se mantiene arriba */
+    width: 100%; /* Ocupará todo el ancho disponible */
+    text-align: justify;
+    padding-right: 50px;
+  }
+
+  .content-info p {
+    text-align: justify;
+    width: 100%;
+  }
+
+  .image {
+    order: 2; /* Se mantiene en medio */
+    display: block; /* Asegura que la imagen respete el flujo */
+    width: 100%; /* Se adapta al ancho disponible */
+    margin: 30px auto; /* Espacio arriba y abajo */
+    text-align: center; /* Centra la imagen */
+  }
+
+  .image img {
+    width: 100%;
+    max-width: 350px;
+    display: block;
+    margin: 0 auto; /* Centra la imagen */
+  }
+
+  .button-container {
+    order: 3; /* Se mantiene abajo */
+    width: 100%;
+    text-align: center;
+    margin-top: 30px; /* Espacio entre imagen y botón */
   }
 }
 
-@keyframes zoomIn {
-  from {
-      opacity: 0;
-      transform: scale(0.8);
-  }
-  to {
-      opacity: 1;
-      transform: scale(1);
-  }
-}
 
-.subtitle, .description {
-  opacity: 0;
-  animation: zoomIn 0.8s ease-out forwards;
-}
+
+
+
 
 /* Efecto al pasar el cursor */
 .custom-button:hover {

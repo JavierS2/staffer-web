@@ -23,6 +23,7 @@ nav {
   align-items: center;
   position: fixed; /* Fija la navbar */
   width: 100%; /* Ocupa todo el ancho */
+  z-index: 100;
 }
 
 .links-container {
