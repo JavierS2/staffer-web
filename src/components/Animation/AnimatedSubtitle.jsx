@@ -44,17 +44,9 @@ export default function AnimatedSubtitle() {
             animate={isVisible ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia voluptatem eaque voluptates deleniti, ut dolorum ipsa fugiat velit iusto recusandae deserunt aliquid ea quasi illum corrupti natus. Blanditiis dicta, fuga quibusdam quo fugiat sed, asperiores sint explicabo architecto recusandae alias dolore, illum facere nobis necessitatibus eligendi nemo. Odit laudantium necessitatibus eius harum magni praesentium enim est, dolore officiis totam corrupti quisquam dolorum quibusdam consequuntur, dolor numquam, culpa quidem soluta natus itaque velit voluptatem? Rerum beatae animi delectus earum, esse neque illum sequi autem quidem cupiditate excepturi dolorem modi eligendi pariatur facilis iste? Ab blanditiis unde officia. Nemo sit alias laudantium.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia voluptatem eaque voluptates deleniti, ut dolorum ipsa fugiat velit iusto recusandae deserunt aliquid ea quasi illum corrupti natus. Blanditiis dicta, fuga quibusdam quo fugiat sed, asperiores sint explicabo architecto recusandae alias dolore, illum facere nobis necessitatibus eligendi nemo. 
+            <br />Odit laudantium necessitatibus eius harum magni praesentium enim est, dolore officiis totam corrupti quisquam dolorum quibusdam consequuntur, dolor numquam, culpa quidem soluta natus itaque velit voluptatem?. Rerum beatae animi delectus earum, esse neque illum sequi autem quidem cupiditate excepturi dolorem modi eligendi pariatur facilis iste? Ab blanditiis unde officia. Nemo sit alias laudantium.
           </motion.p>
-          <div className="button-container">
-            <motion.button 
-              className="custom-button"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
-              Haz clic
-            </motion.button>
-          </div>
         </div>
       </div>
       
@@ -65,7 +57,7 @@ export default function AnimatedSubtitle() {
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 1, ease: "easeOut" }}
       >
-        <img src="/images/staffer.lightpurple.png" alt="Staffer Light Purple" />
+        <img src="/images/stafferlogoWyear.png" alt="Staffer Light Purple" />
       </motion.div>
     </motion.section>
   );

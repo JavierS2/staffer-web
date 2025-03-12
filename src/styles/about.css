@@ -70,43 +70,19 @@ body, html {
 .subtitle {
   font-size: clamp(20px, 2vw, 30px);
   font-weight: 600;
-  color: #BFA27A;
+  color: #8C5E3C;
   line-height: 1.4;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 .description {
   font-size: clamp(16px, 1.5vw, 24px);
   font-weight: 400;
-  color: #A08A6F;
+  color: #5C6B5C;
   max-width: 80ch;
   line-height: 1.6;
-}
-
-.button-container {
-  margin-top: 40px;
-  margin-bottom: 10px;
-  width: 100%; 
-  display: flex;
-  justify-content: center; /* Centra horizontalmente el botón */
-  align-items: center; /* Asegura que esté alineado verticalmente */
-}
-
-
-.custom-button {
-  background-color: #BFA27A;
-  color: #2F4435;
-  font-size: clamp(16px, 1.5vw, 20px);
-  font-weight: bold;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  
-  min-width: 180px;
-  max-width: 300px;
-  text-align: center;
+  margin-bottom: 80px;
+  margin-top: 10px;
 }
 
 .image {
@@ -119,6 +95,7 @@ body, html {
   flex-shrink: 0; /* Evita que se reduzca demasiado */
   align-self: auto;
   margin: auto 0;
+  padding-right: 50px;
 }
 
 .image img {
@@ -150,53 +127,39 @@ body, html {
 @media (max-width: 950px) {
   .second-section {
     display: flex;
-    flex-wrap: wrap; /* Permite que los elementos se acomoden en varias líneas */
-    justify-content: center; /* Centra el contenido */
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: center; /* Centra los elementos en la sección */
     text-align: center;
   }
 
-  .content-info {
+.content-info {
     order: 1; /* Se mantiene arriba */
-    width: 100%; /* Ocupará todo el ancho disponible */
+    width: 90%; /* Un poco más estrecho para mejor lectura */
     text-align: justify;
-    padding-right: 50px;
-  }
+    padding: 0 20px; /* Ajuste del padding */
+    margin-bottom: 20px; /* Espacio después del texto */
+}
 
-  .content-info p {
+.content-info p {
     text-align: justify;
     width: 100%;
-  }
+}
 
-  .image {
-    order: 2; /* Se mantiene en medio */
-    display: block; /* Asegura que la imagen respete el flujo */
-    width: 100%; /* Se adapta al ancho disponible */
-    margin: 30px auto; /* Espacio arriba y abajo */
-    text-align: center; /* Centra la imagen */
-  }
+.image{
+    order: 2; /* Se asegura que vaya debajo del texto */
+    display: flex; /* Usa flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    width: 100%;
+    margin-top: 20px; /* Espacio entre el texto y la imagen */
+}
 
   .image img {
     width: 100%;
-    max-width: 350px;
+    max-width: 450px; /* Evita que sea demasiado grande */
     display: block;
-    margin: 0 auto; /* Centra la imagen */
-  }
-
-  .button-container {
-    order: 3; /* Se mantiene abajo */
-    width: 100%;
-    text-align: center;
-    margin-top: 30px; /* Espacio entre imagen y botón */
+    margin: 0 80px 80px; /* Centra la imagen correctamente */
   }
 }
 
 
-
-
-
-
-/* Efecto al pasar el cursor */
-.custom-button:hover {
-  background-color: #A08A6F;
-  transform: scale(1.05);
-}
