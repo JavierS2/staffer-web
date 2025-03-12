@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card/Card.astro';
+import '../styles/index.css';
 ---
 
 <Layout>
@@ -15,26 +16,3 @@ import Card from '../components/Card/Card.astro';
         description="Esta es una descripción de ejemplo para la tarjeta."
       />
 </Layout>
-
-<style>
-	.images {
-
-		display: block;	
-	}
-	.non-full {
-		width: 300px;
-		height: auto;
-		display: block;
-	}
-	.full-width-image {
-	width: 80vw;
-	height: auto;
-	display: flex;
-	}
-
-	h1 {
-		font-size: 3rem;
-		padding-top: 80px;
-		text-align: center;
-	}
-</style>
