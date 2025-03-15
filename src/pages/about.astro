@@ -5,7 +5,6 @@ import Layout from '../layouts/Layout.astro';
 import "../styles/about.css";
 ---
 
-
 <head>
   <title>About us</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,13 +16,20 @@ import "../styles/about.css";
   <body>
     <section class="first-section">
       <div class="content-wrapper">
-          <h1 class="title"><AnimatedTitle client:idle/></h1>
+        <h1 class="title">
+          <AnimatedTitle text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut fugiat pariatur a ipsam nulla doloribus ea quasi qui quo. Blanditiis, quod? Ratione libero assumenda quas pariatur, expedita consectetur dignissimos sapiente." client:idle />
+        </h1>
       </div>
-  </section>
+    </section>
   
     <section class="second-section">
-              <AnimatedSubtitle client:idle/>
+      <AnimatedSubtitle 
+        title="Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate aperiam praesentium explicabo et quidem blanditiis atque sit odit rem tenetur, quisquam quos laboriosam id nostrum maiores quaerat enim asperiores porro."
+        description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore in molestiae laborum sunt, repudiandae eligendi impedit vero reiciendis ex accusantium debitis? Ducimus provident ea nihil vero dolorum fugit amet temporibus ipsam tempore delectus ipsa laudantium atque sapiente vitae facilis laborum, adipisci aut numquam corporis quae tenetur! Cumque voluptate."
+        imageSrc="/images/stafferlogoWyear.png"
+        altText="Nuestra empresa"
+        client:idle
+      />
     </section>
   </body>
 </Layout>
-

@@ -1,20 +1,19 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const fullText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut fugiat pariatur a ipsam nulla doloribus ea quasi qui quo. Blanditiis, quod? Ratione libero assumenda quas pariatur, expedita consectetur dignissimos sapiente."; // Texto que se animará
-export default function AnimatedTitle() {
+export default function AnimatedTitle({ text }) {
   const [displayedText, setDisplayedText] = useState("");
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    if (index < fullText.length) {
+    if (index < text.length) {
       const timeout = setTimeout(() => {
-        setDisplayedText((prev) => prev + fullText[index]);
+        setDisplayedText((prev) => prev + text[index]);
         setIndex(index + 1);
       }, 10);
       return () => clearTimeout(timeout);
     }
-  }, [index]);
+  }, [index, text]);
 
   return (
     <motion.h1

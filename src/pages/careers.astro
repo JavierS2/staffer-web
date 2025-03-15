@@ -1,11 +1,36 @@
 ---
+import AnimatedSubtitle from "../components/Animation/AnimatedSubtitle";
+import AnimatedTitle from "../components/Animation/AnimatedTitle";
 import Layout from '../layouts/Layout.astro';
-
+import "../styles/careers.css";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
+<head>
+    <title>Careers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
+  </head>
 <Layout>
-    <h1>Careers</h1>
-
+    <header>
+    <div class="first-container">
+            <h1 class="title">
+                <AnimatedTitle text={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel minima dicta minus odit sapiente."} client:load/>
+            </h1>
+    </div>
+  </header>
+<section>
+    <div class="second-section-wrapper">
+        <div class="second-container">
+            <h2 class="second-title">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, minima et.</h2>
+            <p class="second-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas aspernatur velit quae voluptate atque, esse placeat eligendi. Alias, ut magnam? Impedit autem nulla nam doloribus totam quibusdam. Dicta sint optio quas a, delectus explicabo soluta in fuga illum. Odio, esse!</p>
+            <button class="button-secondSection"  onclick="window.location.href='index.html'">Inicio</button>
+        </div>
+        <div class="image-secondSection">
+            <img src="/images/staffer.1a1110.png" alt="Imagen descriptiva">
+        </div>
+    </div>
+    </section>
 </Layout>
