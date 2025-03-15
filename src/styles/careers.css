@@ -13,7 +13,7 @@ body {
 .title {
     margin-top: 5vh;
     text-align: left;
-    font-size: 2.3rem;
+    font-size: clamp(25px, 4vw, 35px);
     color: #2F4435;
     animation: fadeInDown 1s ease-in-out;
 }
@@ -60,10 +60,6 @@ body {
     animation: fadeIn 1s ease-in-out;
     margin: 20vh auto 200px 0; /* Centrar el contenedor */
 }
-
-
-
-
 
 /* Contenedor principal que agrupa el texto y la imagen */
 .second-section-wrapper {
@@ -134,7 +130,7 @@ body {
     transition: all 0.3s ease-in-out; /* Transición suave */
     position: relative;
     overflow: hidden;
-    margin-top: 30px;
+    margin-top: -50px; /* Subir el botón 20px */
 }
 
 /* Efecto hover */
@@ -164,48 +160,52 @@ body {
     left: 100%;
 }
 
-
-
 /* Media query para pantallas de 1300px o menos */
 @media (max-width: 1300px) {
-    /* Ajustes para la primera sección */
     .first-container {
-        height: auto; /* Ajuste dinámico */
+        height: auto;
         text-align: center;
         padding: 0 50px;
-        margin: 10vh auto 100px; /* Margen superior y espaciado */
+        margin: 10vh auto 100px;
     }
 
     .title {
-        font-size: clamp(0.6rem, 4vw, 1rem); /* Ajuste de tamaño */
+        font-size: clamp(0.6rem, 4vw, 1rem);
         text-align: center;
         margin-bottom: 20px;
     }
 
-    /* Ajustes para la segunda sección */
     .second-section-wrapper {
-        flex-direction: column; /* Apila los elementos */
+        flex-direction: column;
         align-items: center;
         text-align: center;
         padding: 20px;
+        margin-bottom: 100px;
     }
 
     .second-container {
-        width: 80%; /* Ajusta el ancho del texto */
+        width: 80%;
         margin: 0 auto;
         padding: 0;
         align-items: center;
+        display: flex;
+        flex-direction: column; /* Apila los elementos verticalmente */
+    }
+
+    .second-paragraph {
+        margin-bottom: 80px; /* Espaciado entre el texto y el botón */
     }
 
     .button-secondSection {
         align-self: center;
+        margin-top: 20px; /* Asegura que esté debajo del texto */
     }
 
     .image-secondSection {
         width: 100%;
         display: flex;
         justify-content: center;
-        margin-top: 40px; /* Espacio entre el texto y la imagen */
+        margin-top: 40px;
     }
 
     .image-secondSection img {
@@ -215,13 +215,10 @@ body {
     }
 }
 
-/* Media query para pantallas de 900px o menos */
 @media (max-width: 900px) {
-    /* Ajustes para la primera sección */
     .first-container {
         padding: 0 40px;
-        margin: 8vh auto 40px;
-        
+        margin: 17vh auto 60px;
     }
 
     .title {
@@ -229,7 +226,6 @@ body {
         text-align: justify;
     }
 
-    /* Ajustes para la segunda sección */
     .second-container {
         width: 90%;
     }
@@ -243,6 +239,7 @@ body {
     }
 
     .button-secondSection {
+        margin-top: -140px;
         font-size: 14px;
         padding: 10px 20px;
     }
@@ -252,9 +249,3 @@ body {
         max-width: 300px;
     }
 }
-
-
-
-
-
-

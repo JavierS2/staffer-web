@@ -19,7 +19,8 @@
     box-shadow: var(--shadow);
     overflow: hidden;
     animation: fadeIn 1s ease-in-out;
-    margin-top: 110px;   
+    margin-top: 110px; 
+    margin-bottom: 200px;   /*Mejora involucrada para que el footer no tape el botón de envío*/
 }
 
 .box-info {
@@ -84,6 +85,8 @@
     background: var(--hover-color);
     transform: scale(1.1);
 }
+
+
 
 form {
     padding: 40px;

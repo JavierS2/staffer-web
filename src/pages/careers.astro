@@ -1,6 +1,8 @@
 ---
-import AnimatedSubtitle from "../components/Animation/AnimatedSubtitle";
+import AnimatedSlideInText from "../components/Animation/AnimatedSlideInText";
 import AnimatedTitle from "../components/Animation/AnimatedTitle";
+import AnimatedSlideInButton from "../components/Animation/AnimatedSlideInButton";
+import AnimatedFadeInImage from "../components/Animation/AnimatedFadeInImage";
 import Layout from '../layouts/Layout.astro';
 import "../styles/careers.css";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -24,12 +26,26 @@ import "../styles/careers.css";
 <section>
     <div class="second-section-wrapper">
         <div class="second-container">
-            <h2 class="second-title">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, minima et.</h2>
-            <p class="second-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas aspernatur velit quae voluptate atque, esse placeat eligendi. Alias, ut magnam? Impedit autem nulla nam doloribus totam quibusdam. Dicta sint optio quas a, delectus explicabo soluta in fuga illum. Odio, esse!</p>
-            <button class="button-secondSection"  onclick="window.location.href='index.html'">Inicio</button>
+            <h2 class="second-title">
+                <AnimatedSlideInText text={"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, minima et."} 
+                client:load/>
+            </h2>
+            <p class="second-paragraph">
+                <AnimatedSlideInText text={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas aspernatur velit quae voluptate atque, esse placeat eligendi. Alias, ut magnam? Impedit autem nulla nam doloribus totam quibusdam. Dicta sint optio quas a, delectus explicabo soluta in fuga illum. Odio, esse!"} 
+                client:load/>
+            </p>
+            <AnimatedSlideInButton 
+                text="Inicio" 
+                onClick={() => window.location.href='index.html'} 
+                className="button-secondSection" 
+                client:load/> 
         </div>
         <div class="image-secondSection">
-            <img src="/images/staffer.1a1110.png" alt="Imagen descriptiva">
+            <AnimatedFadeInImage 
+                src="/images/staffer.1a1110.png" 
+                alt="Imagen descriptiva"
+                className="image-secondSection"
+                client:load/>
         </div>
     </div>
     </section>

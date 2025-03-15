@@ -124,42 +124,92 @@ body, html {
   animation: blink 1s infinite;
 }
 
-@media (max-width: 950px) {
-  .second-section {
-    display: flex;
-    flex-direction: column; /* Apila los elementos verticalmente */
-    align-items: center; /* Centra los elementos en la sección */
-    text-align: center;
+
+/* Para pantallas de 1300px o menos */
+@media (max-width: 1300px) {
+  .content-wrapper {
+      padding-left: 60px; /* Reduce el padding en pantallas más pequeñas */
+      padding-top: 20px;
+      align-items: center; /* Centra el contenido */
   }
 
-.content-info {
-    order: 1; /* Se mantiene arriba */
-    width: 90%; /* Un poco más estrecho para mejor lectura */
-    text-align: justify;
-    padding: 0 20px; /* Ajuste del padding */
-    margin-bottom: 20px; /* Espacio después del texto */
-}
+  .title {
+      text-align: center;
+      font-size: clamp(24px, 4vw, 36px);
+      margin: 60px 0 20px 0;
+      max-width: 90%;
+  }
 
-.content-info p {
-    text-align: justify;
-    width: 100%;
-}
+  .content-info {
+      max-width: 90%;
+      text-align: justify;
+      margin: 0 auto;
+  }
 
-.image{
-    order: 2; /* Se asegura que vaya debajo del texto */
-    display: flex; /* Usa flexbox */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    width: 100%;
-    margin-top: 20px; /* Espacio entre el texto y la imagen */
-}
+  .second-section {
+      flex-direction: column; /* Acomoda los elementos en una sola columna */
+      align-items: center;
+      padding-left: 0;
+  }
+
+  .image {
+      max-width: 60%; /* Ajusta el tamaño de la imagen */
+      padding-right: 0;
+      margin-top: 20px;
+  }
 
   .image img {
-    width: 100%;
-    max-width: 450px; /* Evita que sea demasiado grande */
-    display: block;
-    margin: 0 80px 80px; /* Centra la imagen correctamente */
+      max-width: 350px;
+      min-width: 120px;
   }
+
+  .button-secondSection {
+      align-self: center;
+      margin-top: 20px;
+  }
+}
+
+/* Para pantallas de 900px o menos */
+@media (max-width: 900px) {
+  .content-wrapper {
+      padding-left: 20px; /* Reduce aún más el padding */
+      padding-top: 10px;
+      margin-top: 25vh;
+      
+  }
+
+  .title {
+      font-size: clamp(22px, 4vw, 32px);
+      text-align: justify;
+      max-width: 95%;
+      margin: 40px auto;
+  }
+
+  .content-info {
+      max-width: 95%;
+      text-align: justify;
+  }
+
+  .subtitle {
+      font-size: clamp(18px, 2vw, 28px);
+      margin-top: -25vh;
+  }
+
+  .description {
+      font-size: clamp(14px, 1.5vw, 22px);
+  }
+
+  .image {
+      max-width: 70%;
+  }
+
+  .image img {
+      max-width: 300px;
+      min-width: 100px;
+      margin-bottom: 40px;
+      margin-top: -30px;
+  }
+
 }
 
 

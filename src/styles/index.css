@@ -13,18 +13,22 @@ body {
 header {
     width: 100%;
     text-align: center;
+    overflow-x: hidden; /* Evita barras de desplazamiento lateral */
 }
 
 /* H1 Principal - Staffer */
 /* H1 Principal - Staffer */
-h1 {
-    font-size: clamp(3rem, 10vw, 8rem); /* Tamaño adaptable según el ancho de la pantalla */
+.first-title, .second-title {
+    font-size: clamp(3rem, 10vw, 8rem); /* Tamaño adaptable */
     font-weight: bold;
     text-align: center;
-    width: 100%; /* Evita que se desborde en pantallas pequeñas */
-    max-width: 1200px; /* Máximo ancho */
-    margin: 50px auto;
-    padding: 20px 0;
+    width: 100vw; /* Ocupa todo el ancho del viewport */
+    height: 100vh; /* Ocupa todo el alto del viewport */
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    margin: 0;
+    padding: 0;
     color: #2F4435;
     animation: fadeInScale 1.5s ease-in-out;
     word-wrap: break-word;
