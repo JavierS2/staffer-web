@@ -1,18 +1,38 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card/Card.astro';
 import '../styles/index.css';
 ---
 
 <Layout>
-	
-	<img src="/images/Staffer_Header_V2.png" alt="Staffer Header" class="full-width-image">
-	<h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea aliquam ipsam corporis harum consectetur delectus laborum vero, maxime minima! Veritatis accusantium consequuntur quasi, pariatur accusamus eveniet dicta minima. Perferendis, in?</h1>
-	<img src="/images/STAFFER_AD_2.28.png" alt="Staffer" class="full-width-image">
-	<Card
-        imageSrc="/images/Staffer_Header_V2.png"
-        imageAlt="Imagen de ejemplo"
-        title="Título de la tarjeta"
-        description="Esta es una descripción de ejemplo para la tarjeta."
-      />
+  <section class="content">
+    <!-- Título principal -->
+    <h1>Welcome to Staffer</h1>
+
+    <!-- Icono de scroll -->
+    <div class="scroll-indicator">
+      <span class="scroll-icon">&#9660;</span> <!-- Icono de flecha hacia abajo -->
+    </div>
+
+    <!-- Imagen de ancho completo -->
+    <img src="/images/Staffer_Header_V2.png" alt="Staffer Header" class="full-width-image">
+
+    <!-- Subtítulo y texto introductorio -->
+    <h2>Boost Your Vision with Staffer</h2>
+    <p class="intro-text">
+      Discover a new way to connect, manage, and optimize.  
+      Your community, your team, your growth... all in one place.
+    </p>
+
+    <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima quaerat assumenda autem repellendus, ducimus ex! Id minima maxime officia omnis accusamus.</h3>
+
+    <!-- Contenedor de imagen y texto -->
+    <div class="image-text-container">
+      <img src="/images/STAFFER_AD_2.28.png" alt="Staffer" class="rounded-image">
+      <p class="side-text">
+        Innovation starts here. With tools designed to enhance  
+        your productivity and strengthen your connections,  
+        Staffer takes you to the next level.
+      </p>
+    </div>
+  </section>
 </Layout>

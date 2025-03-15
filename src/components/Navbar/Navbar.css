@@ -10,9 +10,8 @@
   padding: 0px;
 }
 
-
 html {
-  font-size: 12pt;
+  font-size: 14pt;
   font-family: "EB Garamond", Garamond, serif;
 }
 
@@ -62,7 +61,6 @@ nav a {
 
 nav .home-link {
   margin-right: auto;
-  font-family: 'Courier New', Courier, monospace;
 }
 
 nav svg {
