@@ -6,9 +6,9 @@ body {
 .content-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Asegura alineación desde la izquierda */
+  align-items: flex-start;
   padding-top: 30px;
-  padding-left: 120px; /* Aplica el mismo padding a todo el contenido */
+  padding-left: 120px; 
 }
 
 .title {
@@ -22,36 +22,36 @@ body {
 
 .content-info {
   max-width: 80%;
-  text-align: justify; /* Justifica el texto */
-  margin: 0 auto; /* Centra el contenedor en el div */
-  display: block; /* Asegura que ocupe toda la línea */
+  text-align: justify;
+  margin: 0 auto;
+  display: block;
 }
 
 .second-section {
-  margin: 80px 0;
-  width: 100%; /* Asegura que la sección ocupe todo el ancho disponible */
+  margin-top: 20px;
+  margin-bottom: 80px;
+  width: 100%;
   max-width: 100%;
   overflow-x: hidden;
   box-sizing: border-box;
-  padding-left: 0px; /* Evita doble margen */
+  padding-left: 0px;
   display: flex;
-  justify-content: flex-start; /* Alinea el contenido a la izquierda */
-  align-items: flex-start; /* Alinea la sección con el título */
+  justify-content: flex-start; 
+  align-items: flex-start;
 }
 
 .second-section::-webkit-scrollbar {
-  display: none; /* Oculta scrollbar en navegadores WebKit */
+  display: none; 
 }
 
 body, html {
-  overflow-x: hidden; /* Evita desbordamiento horizontal */
+  overflow-x: hidden;
 }
 
-/* Ajustar el contenido dentro de la sección */
 .content-info {
-  max-width: 80%; /* Evita que el texto sea demasiado ancho */
-  text-align: justify; /* Justifica el texto */
-  margin-left: 0; /* Alinea el contenido a la izquierda */
+  max-width: 80%; 
+  text-align: justify; 
+  margin-left: 0;
 }
 
 .title, .subtitle, .description {
@@ -64,7 +64,7 @@ body, html {
   text-align: start;
   margin-left: auto;
   margin-right: auto;
-  display: block; /* Asegura que ocupe toda la línea */
+  display: block;
 }
 
 .subtitle {
@@ -87,12 +87,12 @@ body, html {
 
 .image {
   display: flex;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
-  width: 100%; /* Asegura que no se desborde */
-  height: 100%; /* Ajusta la altura al contenedor */
-  max-width: 50%; /* Limita el tamaño en pantallas grandes */
-  flex-shrink: 0; /* Evita que se reduzca demasiado */
+  justify-content: center;
+  align-items: center; 
+  width: 100%;
+  height: 100%;
+  max-width: 50%; 
+  flex-shrink: 0;
   align-self: auto;
   margin: auto 0;
   padding-right: 50px;
@@ -100,17 +100,14 @@ body, html {
 
 .image img {
   width: 100%;
-  max-width: 400px; /* Tamaño máximo */
-  min-width: 150px; /* Evita que se haga muy pequeña */
-  height: auto; /* Mantiene la proporción */
+  max-width: 400px;
+  min-width: 150px; 
+  height: auto;
   border-radius: 20%;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
   object-fit: contain;
 }
 
-
-
-/* Media queries para hacer la imagen más responsiva */
 
 /*Animaciones en CSS*/
 .custom-button:hover {
@@ -124,18 +121,16 @@ body, html {
   animation: blink 1s infinite;
 }
 
-
 /* Para pantallas de 1300px o menos */
 @media (max-width: 1300px) {
   .content-wrapper {
-      padding-left: 60px; /* Reduce el padding en pantallas más pequeñas */
-      padding-top: 20px;
-      align-items: center; /* Centra el contenido */
+      padding-left: 60px;
+      align-items: center;
   }
 
   .title {
       text-align: center;
-      font-size: clamp(24px, 4vw, 36px);
+      font-size: clamp(26px, 4vw, 36px);
       margin: 60px 0 20px 0;
       max-width: 90%;
   }
@@ -147,13 +142,13 @@ body, html {
   }
 
   .second-section {
-      flex-direction: column; /* Acomoda los elementos en una sola columna */
+      flex-direction: column;
       align-items: center;
       padding-left: 0;
   }
 
   .image {
-      max-width: 60%; /* Ajusta el tamaño de la imagen */
+      max-width: 60%;
       padding-right: 0;
       margin-top: 20px;
   }
@@ -172,15 +167,14 @@ body, html {
 /* Para pantallas de 900px o menos */
 @media (max-width: 900px) {
   .content-wrapper {
-      padding-left: 20px; /* Reduce aún más el padding */
+      padding-left: 20px;
       padding-top: 10px;
-      margin-top: 25vh;
-      
+      margin-top: 15vh;
   }
 
   .title {
-      font-size: clamp(22px, 4vw, 32px);
-      text-align: justify;
+      font-size: clamp(24px, 4vw, 32px);
+      text-align: center;
       max-width: 95%;
       margin: 40px auto;
   }
@@ -192,7 +186,7 @@ body, html {
 
   .subtitle {
       font-size: clamp(18px, 2vw, 28px);
-      margin-top: -25vh;
+      margin-top: 10px;
   }
 
   .description {
@@ -201,15 +195,50 @@ body, html {
 
   .image {
       max-width: 70%;
+      margin-top: 20px;
   }
 
   .image img {
       max-width: 300px;
       min-width: 100px;
       margin-bottom: 40px;
-      margin-top: -30px;
+  }
+}
+
+/* Para pantallas de 600px o menos (Móviles) */
+@media (max-width: 600px) {
+  .content-wrapper {
+      padding-left: 10px;
+      padding-right: 10px;
+      text-align: center;
   }
 
+  .title {
+      font-size: clamp(22px, 5vw, 28px);
+      text-align: center;
+      max-width: 100%;
+  }
+
+  .content-info {
+      max-width: 100%;
+  }
+
+  .subtitle {
+      font-size: clamp(16px, 4vw, 24px);
+  }
+
+  .description {
+      font-size: clamp(12px, 3vw, 20px);
+  }
+
+  .image {
+      max-width: 80%;
+  }
+
+  .image img {
+      max-width: 250px;
+      min-width: 100px;
+  }
 }
 
 
