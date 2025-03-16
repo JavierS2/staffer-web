@@ -1,32 +1,52 @@
 ---
+import TitleTransition from "../components/Animation/TitleTransition.jsx";
+import AnimatedFadeInImage from "../components/Animation/AnimatedFadeInImage.jsx";
 import Layout from '../layouts/Layout.astro';
 import '../styles/index.css';
 ---
 
 <Layout>
   <section class="content">
-    <!-- Título principal -->
-    <h1 class="first-title">Welcome to Staffer</h1>
-    <div class="scroll-indicator">
-      <span class="scroll-icon">&#9660;</span> <!-- Icono de flecha hacia abajo -->
-    </div>
-    <h2 class="second-title">Lorem, ipsum.!</h2>
-    <!-- Icono de scroll -->
-    <div class="scroll-indicator">
-      <span class="scroll-icon">&#9660;</span> <!-- Icono de flecha hacia abajo -->
-    </div>
+    
+    <TitleTransition
+      title="Welcome to Staffer"
+      titleClass="first-title"
+      icon="▼"
+      iconClass="scroll-icon"
+      client:idle
+    />
 
-    <!-- Imagen de ancho completo -->
-    <img src="/images/Staffer_Header_V2.png" alt="Staffer Header" class="full-width-image">
+    <TitleTransition
+      title="Boost Your Vision"
+      titleClass="second-title"
+      icon="▼"
+      iconClass="scroll-icon"
+      client:load
+    />
+    
 
-    <!-- Subtítulo y texto introductorio -->
-    <h2>Boost Your Vision with Staffer</h2>
-    <p class="intro-text">
-      Discover a new way to connect, manage, and optimize.  
-      Your community, your team, your growth... all in one place.
-    </p>
+    <AnimatedFadeInImage 
+        src="/images/Staffer_Header_V2.png" 
+        alt="Imagen descriptiva"
+        className="full-width-image"
+        client:load
+    />
 
-    <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima quaerat assumenda autem repellendus, ducimus ex! Id minima maxime officia omnis accusamus.</h3>
+
+    <!-- Imagen de ancho completo <img src="/images/Staffer_Header_V2.png" alt="Staffer Header" class="full-width-image"> -->
+    
+
+    
+
+    <h3 class="info-redirect-contact">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. 
+      Fusce auctor lacus at sapien tincidunt, nec varius metus rhoncus. Integer
+       auctor, odio ac suscipit congue, nunc tortor posuere lorem, non feugiat
+        lacus justo ut mi. Nam non arcu eget felis sagittis convallis. Suspendisse potenti.
+         Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+          Donec dignissim justo et libero fermentum, ac bibendum urna consequat.
+          <br><a href="contact.html" class="boton-negrita">CONTACTANOS</a>
+        </h3>
 
     <!-- Contenedor de imagen y texto -->
     <div class="image-text-container">

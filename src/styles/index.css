@@ -7,6 +7,8 @@ body {
     padding: 0;
     background-color: #F3E9D2;
     color: #333;
+    overflow-x: hidden;
+    min-height: 200vh; /* Doble del alto de la pantalla */
 }
 
 /* Header */
@@ -36,28 +38,55 @@ header {
 }
 
 
-h3 {
-    font-size: 3rem;
+
+.info-redirect-contact {
+    font-size: 3.3rem;
     font-weight: bold;
-    text-align: center;
+    text-align: justify;
     width: 100%;
-    margin: 50px 0;
-    padding: 20px 0;
+    margin: 25px 0;
+    padding: 20px 230px 10px 90px; /* Ajustando mejor los espacios */
     color: #2c3e50;
     animation: fadeInScale 1.5s ease-in-out;
+    margin-top: 60vh;
 }
+
+.boton-negrita {
+    width: 200px;
+    height: 50px;
+    display: flex;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    background-color: #2F4435;
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out;
+    margin: 50px auto;
+  }
+
+  .boton-negrita:hover {
+    background-color: #143d1d;
+  }
 
 /* Icono de scroll */
 .scroll-indicator {
     text-align: center;
     margin: 20px 0;
     animation: bounce 2s infinite;
+    margin-top: -200px;
+    margin-bottom: 200px;
 }
 
 .scroll-icon {
     font-size: 3rem;
     color: #2c3e50;
     cursor: pointer;
+    animation: bounce 2s infinite;
 }
 
 /* Animación de rebote */
@@ -74,13 +103,16 @@ h3 {
 }
 
 .full-width-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 1374px; /* Ocupa todo el ancho del viewport */
+    height: 233px; /* Ocupa todo el alto del viewport */
+    object-fit: cover; /* Asegura que la imagen cubra todo el espacio sin distorsionarse */
+    display: flex;
+    margin-bottom: 300px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
     animation: zoomIn 1s ease-in-out;
-    margin: 120px auto;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
 }
 
 /* Contenido principal */
@@ -91,7 +123,7 @@ h3 {
 
 h2 {
     font-size: 2.5rem;
-    margin: 50px auto 20px auto; /* Ajuste de márgenes */
+    margin: 300px auto 20px auto; /* Ajuste de márgenes */
     color: #2c3e50;
     animation: fadeInDown 1s ease-in-out;
 }
@@ -171,45 +203,92 @@ h2 {
     }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    h1 {
-        font-size: rem;
-        margin: 20px 0;
+/* Estilos responsivos */
+@media (max-width: 1300px) {
+    .first-title, .second-title {
+        font-size: clamp(2.5rem, 8vw, 6rem);
+        height: 100vh; /* Ocupa todo el alto del viewport */
+        padding: 20px;
     }
-
-    h2 {
-        font-size: 2rem;
-        margin: 30px auto 10px auto; /* Ajuste de márgenes en móviles */
+    
+    .info-redirect-contact {
+        font-size: 2.8rem;
+        padding: 20px 150px 10px 70px;
     }
-
-    h3 {
-        font-size: 1.5rem;
-        margin: 20px 0;
+    
+    .full-width-image {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
     }
-
-    .intro-text {
-        font-size: 1rem;
-        margin: 0 auto 40px auto; /* Ajuste de márgenes en móviles */
-    }
-
+    
     .image-text-container {
         flex-direction: column;
         text-align: center;
     }
-
+    
     .rounded-image {
         width: 80%;
+        max-width: 400px;
     }
-
+    
     .side-text {
-        font-size: 1rem;
-        text-align: center;
-        max-width: 100%;
-        margin: 10px auto;
-    }
-
-    .scroll-icon {
-        font-size: 2rem;
+        font-size: 1.3rem;
+        margin-left: 0;
     }
 }
+
+@media (max-width: 900px) {
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden; /* Evitar scroll horizontal */
+    }
+    
+    .first-title, .second-title {
+        font-size: clamp(2rem, 10vw, 5rem);
+        height: 100vh; /* Mantener el viewport lleno */
+        display: flex;
+        align-items: center; /* Centrar verticalmente */
+        justify-content: center; /* Centrar horizontalmente */
+        text-align: center;
+        width: 100vw; /* Asegurar que ocupa todo el ancho de la pantalla */
+        margin: 0 auto;
+    }
+    
+    .info-redirect-contact {
+        font-size: 2rem;
+        padding: 20px 50px;
+        text-align: center;
+    }
+    
+    .boton-negrita {
+        width: 180px;
+        height: 45px;
+        font-size: 14px;
+    }
+    
+    .full-width-image {
+        width: 100%;
+        height: auto;
+        max-height: 180px;
+    }
+    
+    .image-text-container {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .rounded-image {
+        width: 90%;
+        max-width: 350px;
+    }
+    
+    .side-text {
+        font-size: 1.2rem;
+        margin: 0 auto;
+    }
+}
+
