@@ -19,9 +19,8 @@ header {
 }
 
 /* H1 Principal - Staffer */
-/* H1 Principal - Staffer */
 .first-title, .second-title {
-    font-size: clamp(3rem, 10vw, 8rem); /* Tamaño adaptable */
+    font-size: clamp(5rem, 10vw, 8rem); /* Tamaño adaptable */
     font-weight: bold;
     text-align: center;
     width: 100vw; /* Ocupa todo el ancho del viewport */
@@ -29,7 +28,7 @@ header {
     display: flex;
     align-items: center; /* Centra verticalmente */
     justify-content: center; /* Centra horizontalmente */
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     color: #2F4435;
     animation: fadeInScale 1.5s ease-in-out;
@@ -37,20 +36,21 @@ header {
     overflow-wrap: break-word;
 }
 
-
-
+/* Info Redirect Contact */
 .info-redirect-contact {
     font-size: 3.3rem;
     font-weight: bold;
-    text-align: justify;
+    text-align: center; /* Centrar el texto */
     width: 100%;
-    margin: 25px 0;
-    padding: 20px 230px 10px 90px; /* Ajustando mejor los espacios */
+    margin: 25px auto; /* Centrar horizontalmente */
+    padding: 20px; /* Padding reducido */
     color: #2c3e50;
     animation: fadeInScale 1.5s ease-in-out;
     margin-top: 60vh;
+    box-sizing: border-box; /* Asegurar que el padding no afecte el ancho */
 }
 
+/* Botón Negrita */
 .boton-negrita {
     width: 200px;
     height: 50px;
@@ -67,11 +67,11 @@ header {
     border-radius: 8px;
     transition: background 0.3s ease-in-out;
     margin: 50px auto;
-  }
+}
 
-  .boton-negrita:hover {
+.boton-negrita:hover {
     background-color: #143d1d;
-  }
+}
 
 /* Icono de scroll */
 .scroll-indicator {
@@ -89,30 +89,56 @@ header {
     animation: bounce 2s infinite;
 }
 
-/* Animación de rebote */
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-20px);
-    }
-    60% {
-        transform: translateY(-10px);
-    }
+/* Botón de la segunda sección */
+.button-secondSection {
+    background-color: #2F4435; /* Color de fondo */
+    color: #F3E9D2; /* Color del texto */
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* Transición suave */
+    position: relative;
+    overflow: hidden;
+    margin-top: -50px; /* Subir el botón 20px */
 }
 
+.button-secondSection:hover {
+    background-color: #34503c; /* Un tono más oscuro */
+    transform: scale(1.05); /* Efecto de aumento */
+}
+
+.button-secondSection:active {
+    transform: scale(0.95);
+}
+
+.button-secondSection::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.button-secondSection:hover::after {
+    left: 100%;
+}
+
+/* Imagen de ancho completo */
 .full-width-image {
-    width: 1374px; /* Ocupa todo el ancho del viewport */
-    height: 233px; /* Ocupa todo el alto del viewport */
+    width: 100%; /* Ocupa todo el ancho del viewport */
+    max-width: 1374px; /* Ancho máximo */
+    height: 233px; /* Altura fija */
     object-fit: cover; /* Asegura que la imagen cubra todo el espacio sin distorsionarse */
-    display: flex;
-    margin-bottom: 300px;
+    display: block;
+    margin: 0 auto 300px auto; /* Centrar y margen inferior */
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
     animation: zoomIn 1s ease-in-out;
-    text-align: center;
-    justify-content: center;
-    margin: auto;
 }
 
 /* Contenido principal */
@@ -158,12 +184,12 @@ h2 {
 }
 
 .side-text {
+    text-align: center;
     font-size: 1.5rem;
     max-width: 500px;
     color: #444;
     animation: fadeInUp 1s ease-in-out;
     margin-left: 50px;
-    text-align: center;
 }
 
 .card img {
@@ -193,45 +219,45 @@ h2 {
 }
 
 @keyframes fadeInScale {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-20px); }
+    60% { transform: translateY(-10px); }
 }
 
 /* Estilos responsivos */
 @media (max-width: 1300px) {
     .first-title, .second-title {
         font-size: clamp(2.5rem, 8vw, 6rem);
-        height: 100vh; /* Ocupa todo el alto del viewport */
+        height: 100vh;
         padding: 20px;
     }
-    
+
     .info-redirect-contact {
         font-size: 2.8rem;
-        padding: 20px 150px 10px 70px;
+        padding: 20px;
     }
-    
+
     .full-width-image {
         width: 100%;
         height: auto;
         max-height: 200px;
     }
-    
+
     .image-text-container {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .rounded-image {
         width: 80%;
         max-width: 400px;
     }
-    
+
     .side-text {
         font-size: 1.3rem;
         margin-left: 0;
@@ -245,50 +271,48 @@ h2 {
         width: 100%;
         overflow-x: hidden; /* Evitar scroll horizontal */
     }
-    
+
     .first-title, .second-title {
         font-size: clamp(2rem, 10vw, 5rem);
-        height: 100vh; /* Mantener el viewport lleno */
+        height: 100vh;
         display: flex;
-        align-items: center; /* Centrar verticalmente */
-        justify-content: center; /* Centrar horizontalmente */
+        align-items: center;
+        justify-content: center;
         text-align: center;
-        width: 100vw; /* Asegurar que ocupa todo el ancho de la pantalla */
+        width: 100vw;
         margin: 0 auto;
     }
-    
+
     .info-redirect-contact {
         font-size: 2rem;
-        padding: 20px 50px;
-        text-align: center;
+        padding: 20px;
     }
-    
+
     .boton-negrita {
         width: 180px;
         height: 45px;
         font-size: 14px;
     }
-    
+
     .full-width-image {
         width: 100%;
         height: auto;
         max-height: 180px;
     }
-    
+
     .image-text-container {
         flex-direction: column;
         gap: 15px;
         padding: 15px;
     }
-    
+
     .rounded-image {
         width: 90%;
         max-width: 350px;
     }
-    
+
     .side-text {
         font-size: 1.2rem;
         margin: 0 auto;
     }
 }
-

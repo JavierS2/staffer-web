@@ -4,6 +4,7 @@ import AnimatedFadeInImage from "../components/Animation/AnimatedFadeInImage.jsx
 import Layout from '../layouts/Layout.astro';
 import '../styles/index.css';
 import AnimatedTitle from '../components/Animation/AnimatedTitle';
+import AnimatedSlideInButton from "../components/Animation/AnimatedSlideInButton";
 ---
 
 <Layout>
@@ -28,30 +29,30 @@ import AnimatedTitle from '../components/Animation/AnimatedTitle';
 
     <AnimatedFadeInImage 
         src="/images/Staffer_Header_V2.png" 
-        alt="Imagen descriptiva"
+        alt="Descriptive image"
         className="full-width-image"
         client:load
     />
 
-
     <!-- Imagen de ancho completo <img src="/images/Staffer_Header_V2.png" alt="Staffer Header" class="full-width-image"> -->
-    
-
-    
 
     <h3 class="info-redirect-contact">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. 
       Fusce auctor lacus at sapien tincidunt, nec varius metus rhoncus. Integer
-       auctor, odio ac suscipit congue, nunc tortor posuere lorem, non feugiat
-        lacus justo ut mi. Nam non arcu eget felis sagittis convallis. Suspendisse potenti.
-         Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
-          Donec dignissim justo et libero fermentum, ac bibendum urna consequat.
-          <br><a href="contact.html" class="boton-negrita">CONTACTANOS</a>
-        </h3>
+       auctor, odio ac suscipit congue consequat.
+    </h3>
+
+    <AnimatedSlideInButton 
+                text="CONTACT US" 
+                href='/contact'
+                className="button-secondSection" 
+                client:load/> 
 
     <!-- Contenedor de imagen y texto -->
     <div class="image-text-container">
       <img src="/images/STAFFER_AD_2.28.png" alt="Staffer" class="rounded-image">
+    
+      
       <p class="side-text">
         Innovation starts here. With tools designed to enhance  
         your productivity and strengthen your connections,  

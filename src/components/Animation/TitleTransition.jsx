@@ -30,7 +30,7 @@ const TitleTransition = ({ title, titleClass, icon, iconClass, scrollThreshold =
         <motion.div
           className="scroll-indicator"
           animate={{ opacity: scrolled ? 0 : 1 }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <span className={iconClass}>{icon}</span>
         </motion.div>
