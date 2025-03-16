@@ -81,7 +81,7 @@ body, html {
   color: #5C6B5C;
   max-width: 80ch;
   line-height: 1.6;
-  margin-bottom: 80px;
+  margin-bottom: 50px;
   margin-top: 10px;
 }
 
@@ -121,19 +121,39 @@ body, html {
   animation: blink 1s infinite;
 }
 
-/* Para pantallas de 1300px o menos */
-@media (max-width: 1300px) {
+/* Para pantallas de 1300px o menos (iPad) */
+@media (max-width: 1500px) {
   .content-wrapper {
       padding-left: 60px;
       align-items: center;
+      margin-top: 5vw;
   }
 
   .title {
-      text-align: center;
-      font-size: clamp(26px, 4vw, 36px);
-      margin: 60px 0 20px 0;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: left;
+      font-size: 2.3rem;
+      margin: 60px auto 150px auto;
       max-width: 90%;
   }
+
+  .subtitle {
+    font-size: 2.3rem;
+    margin-top: -90px;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    padding-right: 30px;
+}
+
+.description {
+    align-items: center;
+    font-size: 2.5rem;
+    justify-content: flex-start;
+    text-align: left;
+    padding-right: 30px;
+}
 
   .content-info {
       max-width: 90%;
@@ -165,18 +185,21 @@ body, html {
 }
 
 /* Para pantallas de 900px o menos */
-@media (max-width: 900px) {
+@media (max-width: 950px) {
   .content-wrapper {
       padding-left: 20px;
       padding-top: 10px;
-      margin-top: 15vh;
+      margin-top: 10vh;
   }
 
   .title {
-      font-size: clamp(24px, 4vw, 32px);
-      text-align: center;
+      font-size: 1rem !important; /* Aumentado */
+      text-align: left;
       max-width: 95%;
-      margin: 40px auto;
+      margin: 40px 50px 0px 50px;
+      align-items: start;
+      justify-content: flex-start;
+      text-align: left;
   }
 
   .content-info {
@@ -185,12 +208,23 @@ body, html {
   }
 
   .subtitle {
-      font-size: clamp(18px, 2vw, 28px);
-      margin-top: 10px;
+      font-size: 1.3rem !important; /* Aumentado */
+      margin-top: -90px;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: left;
+      padding-left: 30px;
+      padding-right: 30px;
+      margin-top: -30px;
   }
 
   .description {
-      font-size: clamp(14px, 1.5vw, 22px);
+      font-size: 1rem !important; /* Aumentado */
+      align-items: center;
+      justify-content: flex-start;
+      text-align: left;
+      padding-left: 30px;
+      padding-right: 30px;
   }
 
   .image {
@@ -199,45 +233,9 @@ body, html {
   }
 
   .image img {
-      max-width: 300px;
-      min-width: 100px;
+      max-width: 350px; /* Aumentado */
+      min-width: 120px; /* Aumentado */
       margin-bottom: 40px;
-  }
-}
-
-/* Para pantallas de 600px o menos (Móviles) */
-@media (max-width: 600px) {
-  .content-wrapper {
-      padding-left: 10px;
-      padding-right: 10px;
-      text-align: center;
-  }
-
-  .title {
-      font-size: clamp(22px, 5vw, 28px);
-      text-align: center;
-      max-width: 100%;
-  }
-
-  .content-info {
-      max-width: 100%;
-  }
-
-  .subtitle {
-      font-size: clamp(16px, 4vw, 24px);
-  }
-
-  .description {
-      font-size: clamp(12px, 3vw, 20px);
-  }
-
-  .image {
-      max-width: 80%;
-  }
-
-  .image img {
-      max-width: 250px;
-      min-width: 100px;
   }
 }
 
