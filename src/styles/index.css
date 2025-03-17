@@ -28,12 +28,13 @@ header {
     display: flex;
     align-items: center; /* Centra verticalmente */
     justify-content: center; /* Centra horizontalmente */
-    margin: 0 auto;
-    padding: 0;
+    margin: 0; /* Elimina márgenes */
+    padding: 0; /* Elimina rellenos */
     color: #2F4435;
     animation: fadeInScale 1.5s ease-in-out;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
 }
 
 /* Info Redirect Contact */
@@ -173,6 +174,7 @@ h2 {
     gap: 20px;
     max-width: 900px;
     margin: 100px auto;
+    margin-top: 420px;
     margin-bottom: 150px;
     padding: 20px;
     text-align: left;
@@ -268,7 +270,7 @@ h2 {
     }
 
     .info-redirect-contact {
-        font-size: 2rem;
+        font-size: 1.5rem;
         padding: 20px;
     }
 
@@ -314,7 +316,7 @@ h2 {
     }
 
     .info-redirect-contact {
-        font-size: 2rem;
+        font-size: 1.2rem;
         padding: 20px;
     }
 

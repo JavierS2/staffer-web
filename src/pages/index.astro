@@ -9,12 +9,10 @@ import Layout from '../layouts/Layout.astro';
 import '../styles/index.css';
 ---
 
-
-
 <Layout>
   
   <section class="content">
-    
+
     <TitleTransition
       title="Welcome to Staffer"
       titleClass="first-title"
@@ -30,8 +28,6 @@ import '../styles/index.css';
       iconClass="scroll-icon"
       client:load
     />
-    
-    
 
     <AnimatedFadeInImage 
         src="/images/Staffer_Header_V2.png" 
@@ -39,8 +35,6 @@ import '../styles/index.css';
         className="full-width-image"
         client:load
     />
-
-    <!-- Imagen de ancho completo <img src="/images/Staffer_Header_V2.png" alt="Staffer Header" class="full-width-image"> -->
 
     <h3 class="info-redirect-contact">
       <AnimatedTitle text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Fusce auctor lacus at sapien tincidunt, nec varius metus rhoncus. Integer auctor, odio ac suscipit congue consequat." client:idle />
