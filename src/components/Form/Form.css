@@ -23,6 +23,7 @@
     margin-bottom: 200px;   /*Mejora involucrada para que el footer no tape el botón de envío*/
 }
 
+
 .box-info {
     background: var(--color-1);
     padding: 40px;
@@ -31,18 +32,23 @@
     flex-direction: column;
     justify-content: center;
     gap: 30px;
+    align-items: center
 }
 
 .box-info > h1 {
     font-size: 2rem;
     letter-spacing: 3px;
     animation: slideInLeft 0.8s ease-in-out;
+    text-align: center; /* Centrar el texto */
+    width: 100%; /* Asegurar que ocupe todo el ancho disponible */
+    margin: 0 auto; /* Centrar horizontalmente */
 }
 
 .data {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    align-items: center;
 }
 
 .data > p {
@@ -51,6 +57,7 @@
     align-items: center;
     gap: 10px;
     animation: fadeInUp 0.8s ease-in-out;
+
 }
 
 .data > p > i {

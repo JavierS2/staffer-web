@@ -6,15 +6,18 @@ import './Form.css'
     <div class="box-info">
         <h1>CONNECT WITH US</h1>
         <div class="data">
-            <p><i class="fa-solid fa-phone"></i> +1 123 456 7890</p>
-            <p><i class="fa-solid fa-envelope"></i> staffertest@gmail.com</p>
-            <p><i class="fa-solid fa-location-dot"></i>  San Francisco, USA</p>
-        </div>
-        <div class="links">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <!-- Teléfono -->
+            <p>
+                <ion-icon name="call-outline"></ion-icon> +1 123 456 7890
+            </p>
+            <!-- Correo electrónico -->
+            <p>
+                <ion-icon name="mail-outline"></ion-icon> staffertest@gmail.com
+            </p>
+            <!-- Dirección -->
+            <p>
+                <ion-icon name="location-outline"></ion-icon> San Francisco, USA
+            </p>
         </div>
     </div>
     <form id="contactForm">
@@ -23,20 +26,22 @@ import './Form.css'
             <i class="fa-solid fa-user"></i>
         </div>
         <div class="input-box">
-            <input type="email" name="email" id="email" required placeholder="Email">
+            <input type="email" name="email" id="email" required placeholder="Email" required>
             <i class="fa-solid fa-envelope"></i>
         </div>
         <div class="input-box">
-            <input type="text" name = "subject" id="subject" placeholder="Subject">
+            <input type="text" name="subject" id="subject" placeholder="Subject" required>
             <i class="fa-solid fa-pen-to-square"></i>
         </div>
         <div class="input-box">
-            <textarea id="message" name="message" placeholder="Enter message..." maxlength="500"></textarea>
+            <textarea id="message" name="message" placeholder="Enter message..." maxlength="500" required></textarea>
         </div>
         <button type="submit">Send message</button>
     </form>
 </div>
 
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script is:inline>
   
     document.addEventListener("DOMContentLoaded", () => {
