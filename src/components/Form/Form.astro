@@ -36,53 +36,83 @@ import './Form.css'
         <div class="input-box">
             <textarea id="message" name="message" placeholder="Enter message..." maxlength="500" required></textarea>
         </div>
-        <button type="submit">Send message</button>
+        <div class="input-box">
+            <label id="captchaQuestion"></label>
+            <input type="text" id="captchaAnswer" placeholder="Enter the result" required>
+        </div>
+        
+        <button id="btn" type="submit">Send message</button>
     </form>
 </div>
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script is:inline>
-  
     document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("contactForm");
+        const form = document.getElementById("contactForm");
+        const button = document.getElementById("btn");
+        const captchaQuestion = document.getElementById("captchaQuestion");
+        const captchaAnswer = document.getElementById("captchaAnswer");
 
-    if (!form) {
-        console.error("Form not found.");
-        return;
-    }
+        let num1, num2, correctAnswer;
 
-    form.addEventListener("submit", async function (e) {
-        e.preventDefault();
+        function generateCaptcha() {
+            num1 = Math.floor(Math.random() * 10) + 1;
+            num2 = Math.floor(Math.random() * 10) + 1;
+            correctAnswer = num1 + num2;
+            captchaQuestion.textContent = `What is ${num1} + ${num2}?`;
+            captchaAnswer.value = "";
+        }
 
-        const formData = new FormData(this);
-        const data = Object.fromEntries(formData.entries());
+        generateCaptcha();
 
-        try {
+        if (!form) {
+            console.error("Form not found.");
+            return;
+        }
 
-            const response = await fetch('https://script.google.com/macros/s/AKfycbxiBDblzYr8YSAPzq8LQCZJpkaj0jexKpsivPSeQMGXgi_fdweO4bT2s8Fj9_1GPC9knw/exec', {
-                redirect: "follow",
-                method: "POST",
-                body: JSON.stringify(data),
-                headers: { "Content-Type": "text/plain;charset=utf-8" },
-            });
+        form.addEventListener("submit", async function (e) {
+            e.preventDefault();
 
-            const result = await response.json();
-            console.log(result);
+            if (parseInt(captchaAnswer.value, 10) !== correctAnswer) {
+                alert("Incorrect CAPTCHA. Try again.");
+                generateCaptcha();
+                return;
+            }
 
-            if (result.status === "success") {
-                alert("Message sent successfully.");
-                this.reset();
-            } else {
+            button.disabled = true;
+            button.textContent = "Sending...";
+
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch('https://script.google.com/macros/s/AKfycbxiBDblzYr8YSAPzq8LQCZJpkaj0jexKpsivPSeQMGXgi_fdweO4bT2s8Fj9_1GPC9knw/exec', {
+                    redirect: "follow",
+                    method: "POST",
+                    body: JSON.stringify(data),
+                    headers: { "Content-Type": "text/plain;charset=utf-8" },
+                });
+
+                const result = await response.json();
+                console.log(result);
+
+                if (result.status === "success") {
+                    alert("Message sent successfully.");
+                    this.reset();
+                    generateCaptcha();
+                } else {
+                    alert("Error sending message.");
+                }
+            } catch (error) {
+                console.error("Error:", error);
                 alert("Error sending message.");
             }
-        } catch (error) {
-            console.error("Error:", error);
-            alert("Error sending message.");
-        }
-    });
-});
 
+            button.disabled = false;
+            button.textContent = "Send message";
+        });
+    });
 </script>
 
 </body>
