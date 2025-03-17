@@ -9,8 +9,6 @@ const TitleTransition = ({ title, titleClass, icon, iconClass, scrollThreshold =
     const handleScroll = () => {
       if (titleRef.current) {
         const titlePosition = titleRef.current.getBoundingClientRect().top;
-        
-        // Se desvanece cuando sube por encima del threshold y reaparece al bajar
         setScrolled(titlePosition < scrollThreshold && window.scrollY > scrollThreshold);
       }
     };
@@ -23,14 +21,14 @@ const TitleTransition = ({ title, titleClass, icon, iconClass, scrollThreshold =
     <div ref={titleRef} className="title-container">
       <motion.div
         initial={{ opacity: 1 }}
-        animate={{ opacity: scrolled ? 0 : 1 }} // Se desvanece al bajar y reaparece al subir
-        transition={{ duration: 0.3, ease: "easeOut" }}
+        animate={{ opacity: scrolled ? 0 : 1 }}
+        transition={{ duration: scrolled ? 4 : .2, ease: scrolled ? "easeOut" : "easeIn" }}
       >
         <h1 className={titleClass}>{title}</h1>
         <motion.div
           className="scroll-indicator"
           animate={{ opacity: scrolled ? 0 : 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: scrolled ? 4 : .2, ease: scrolled ? "easeOut" : "easeIn" }}
         >
           <span className={iconClass}>{icon}</span>
         </motion.div>
