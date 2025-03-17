@@ -23,7 +23,7 @@ export default function AnimatedTitle({ text }) {
       className="animated-title"
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 10 }}
-      transition={{ duration: 0.3, ease: "easeOut" }} // Transición rápida
+      transition={{ duration: 0.5, ease: "easeOut" }} // Transición rápida
     >
       {displayedText} <span className="cursor">|</span>
     </motion.h1>

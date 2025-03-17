@@ -1,8 +1,8 @@
 ---
+import AnimatedFadeInImage from "../components/Animation/AnimatedFadeInImage";
+import AnimatedSlideInButton from "../components/Animation/AnimatedSlideInButton";
 import AnimatedSlideInText from "../components/Animation/AnimatedSlideInText";
 import AnimatedTitle from "../components/Animation/AnimatedTitle";
-import AnimatedSlideInButton from "../components/Animation/AnimatedSlideInButton";
-import AnimatedFadeInImage from "../components/Animation/AnimatedFadeInImage";
 import Layout from '../layouts/Layout.astro';
 import "../styles/careers.css";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -38,6 +38,7 @@ import "../styles/careers.css";
                 text="BACK" 
                 href='/' 
                 className="button-secondSection" 
+                delay={0} 
                 client:load/> 
         </div>
         <div class="image-secondSection">

@@ -164,6 +164,7 @@ h2 {
     animation: fadeInUp 1s ease-in-out;
 }
 
+
 /* Contenedor imagen + texto */
 .image-text-container {
     display: flex;

@@ -7,12 +7,12 @@ import AnimatedTitle from "../components/Animation/AnimatedTitle";
 import TitleTransition from "../components/Animation/TitleTransition.jsx";
 import Layout from '../layouts/Layout.astro';
 import '../styles/index.css';
-
 ---
 
 
 
-<Layout>  
+<Layout>
+  
   <section class="content">
     
     <TitleTransition
@@ -31,6 +31,7 @@ import '../styles/index.css';
       client:load
     />
     
+    
 
     <AnimatedFadeInImage 
         src="/images/Staffer_Header_V2.png" 
@@ -46,10 +47,12 @@ import '../styles/index.css';
     </h3>
     
     <AnimatedSlideInButton 
-                text="CONTACT US" 
-                href='/contact'
-                className="button-secondSection" 
-                client:load/> 
+      text="CONTACT US" 
+      href="/contact" 
+      className="button-secondSection"
+      delay={4900} 
+      client:load/>
+ 
 
     <!-- Contenedor de imagen y texto -->
     <div class="image-text-container">
@@ -66,3 +69,4 @@ import '../styles/index.css';
     </div>
   </section>
 </Layout>
+
