@@ -1,9 +1,8 @@
 ---
 import AnimatedFadeInImage from "../components/Animation/AnimatedFadeInImage.jsx";
-import AnimateImageVW from "../components/Animation/AnimatedImageVW";
 import AnimatedSlideInButton from "../components/Animation/AnimatedSlideInButton";
 import AnimatedText from "../components/Animation/AnimatedText";
-import AnimatedTitle from "../components/Animation/AnimatedTitle";
+import AnimatedTitle from "../components/Animation/AnimatedTitle.jsx";
 import TitleTransition from "../components/Animation/TitleTransition.jsx";
 import Layout from '../layouts/Layout.astro';
 import '../styles/index.css';
@@ -14,7 +13,7 @@ import '../styles/index.css';
   <section class="content">
 
     <TitleTransition
-      title="Welcome to Staffer"
+      title="Staffer"
       titleClass="first-title"
       icon="▼"
       iconClass="scroll-icon"
@@ -22,44 +21,45 @@ import '../styles/index.css';
     />
 
     <TitleTransition
-      title="Boost Your Vision"
+      title="Personal Staffing in an Impersonal World"
       titleClass="second-title"
       icon="▼"
       iconClass="scroll-icon"
       client:load
     />
 
-    <AnimatedFadeInImage 
-        src="/images/Staffer_Header_V2.png" 
-        alt="Descriptive image"
-        className="full-width-image"
-        client:load
-    />
+    
 
     <h3 class="info-redirect-contact">
-      <AnimatedTitle text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Fusce auctor lacus at sapien tincidunt, nec varius metus rhoncus. Integer auctor, odio ac suscipit congue consequat." client:idle />
+      <AnimatedTitle text="Staffer offers a consultative approach to candidate search. With over a decade of combined experience we know how to help you find the best fit for your need." delay={0} typingSpeed={25} client:load />
+
+      <br>
+      <AnimatedTitle text="If you're a business interested in letting us help you find who you're looking for please click the 'Contact Us' button below and we'll reach out to see how we can help" delay={4400} typingSpeed={25} client:load />
     </h3>
+    
     
     <AnimatedSlideInButton 
       text="CONTACT US" 
       href="/contact" 
       className="button-secondSection"
-      delay={4900} 
+      delay={9000} 
       client:load/>
  
 
     <!-- Contenedor de imagen y texto -->
     <div class="image-text-container">
-        <AnimateImageVW 
-        src="/images/STAFFER_AD_2.28.png"  
-        alt="Staffer" 
-        className="rounded-image" 
-        client:load/>
+    <AnimatedFadeInImage 
+        src="/images/STAFFER_AD_2.28.png" 
+        alt="staffer"
+        className="rounded-image"
+        client:load
+    />
 
-        <AnimatedText 
-        text="Innovation starts here. With tools designed to enhance your productivity and strengthen your connections, Staffer takes you to the next level."
+    <AnimatedText 
+        text="We know sifting through endless resumes, job board profiles, applications, and screening candidates can get overwhelming and expensive! That’s why Staffer is here to help. With personalized solutions for your organizations needs we want to source for you. The best part? You don’t pay a dime until you hire our candidate."
         className="side-text"
-        client:load/>
+    client:load/>
+
     </div>
   </section>
 </Layout>

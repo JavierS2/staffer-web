@@ -20,7 +20,6 @@ header {
 
 /* H1 Principal - Staffer */
 .first-title, .second-title {
-    font-size: clamp(5rem, 10vw, 8rem); /* Tamaño adaptable */
     font-weight: bold;
     text-align: center;
     width: 100vw; /* Ocupa todo el ancho del viewport */
@@ -37,9 +36,20 @@ header {
     box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
 }
 
+.first-title { 
+    font-size: clamp(10rem, 12vw, 12rem);
+    padding-right: 50px;
+}
+
+.second-title {
+    font-size: clamp(4rem, 12vw, 6rem); /* Tamaño adaptable */
+    padding-right: 50px;
+}
+
+
 /* Info Redirect Contact */
 .info-redirect-contact {
-    font-size: 2.1rem;
+    font-size: 1.8rem;
     font-weight: bold;
     text-align: center; 
     width: 100%;
@@ -81,7 +91,7 @@ header {
     text-align: center;
     margin: 20px 0;
     animation: bounce 2s infinite;
-    margin-top: -200px;
+    margin-top: -165px;
     margin-bottom: 200px;
 }
 
@@ -178,6 +188,7 @@ h2 {
     margin-bottom: 150px;
     padding: 20px;
     text-align: left;
+    margin-top: 300px;
 }
 
 .rounded-image {
@@ -305,7 +316,6 @@ h2 {
     }
 
     .first-title, .second-title {
-        font-size: clamp(2rem, 10vw, 5rem);
         height: 100vh;
         display: flex;
         align-items: center;
@@ -314,6 +324,17 @@ h2 {
         width: 100vw;
         margin: 0 auto;
     }
+
+    .first-title { 
+        font-size: clamp(7rem, 12vw, 9rem);
+        padding-right: 50px;
+    }
+    
+    .second-title {
+        font-size: clamp(4rem, 12vw, 6rem); /* Tamaño adaptable */
+        padding-right: 50px;
+    }
+    
 
     .info-redirect-contact {
         font-size: 1.2rem;
