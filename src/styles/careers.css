@@ -5,236 +5,122 @@ body {
     padding: 0;
     background-color: #F3E9D2;
     color: #333;
-    max-width: 100vw; /* Evita desbordamiento horizontal */
+    max-width: 100vw;
     overflow-x: hidden;
 }
 
-/* Título principal */
-.title {
-    margin-top: 5vh;
-    text-align: left;
-    font-size: clamp(25px, 4vw, 35px);
-    color: #2F4435;
-    animation: fadeInDown 1s ease-in-out;
-}
-
-/* Contenedor principal */
-.first-container {
+/* Primera sección */
+.first-section {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     justify-content: center;
-    height: 50vh;
-    animation: fadeIn 1s ease-in-out;
-    padding: 0 200px;
+    align-items: center;
+    height: 40vh; /* Reducir la altura para acercar el contenido */
+    padding: 0 20px;
 }
 
+.content-wrapper {
+    text-align: center;
+}
 
+.title {
+    font-size: clamp(2rem, 6vw, 3rem);
+    color: #2F4435;
+    margin: 0;
+}
 
-/* Contenedor principal que agrupa el texto y la imagen */
-.second-section-wrapper {
-    display: flex; /* Alinea los elementos en fila */
-    align-items: start; /* Alinea los elementos al inicio verticalmente */
-    justify-content: space-between; /* Espacio entre los dos divs */
-    width: 100%;
+/* Segunda sección */
+.second-section {
     padding: 20px;
-    margin-bottom: 180px;
 }
 
-/* Contenedor de texto */
-.second-container {
+.second-section-wrapper {
     display: flex;
     flex-direction: column;
-    width: 50%; /* Ocupa la mitad del ancho */
-    padding-left: 20px;
-    align-items: start;
-    margin-right: 20px; /* Espacio a la derecha */
-    margin-left: 170px;
-    margin-top: -100px;
-}
-
-/* Título de la sección */
-.second-title {
-    text-align: left;
-    font-size: clamp(1.8rem, 5vw, 2rem);
-    font-weight: 500;
-    color: #8C5E3C;
-    animation: fadeInDown 1s ease-in-out;
-}
-
-
-/* Contenedor de la imagen */
-.image-secondSection {
-    display: flex;
-    justify-content: flex-start;
     align-items: center;
-    width: 50%; /* Ocupa la otra mitad del espacio */
-    margin-bottom: 100px;
+    justify-content: center;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: -50px; /* Acercar más el contenido al texto principal */
 }
 
-/* Estilo para la imagen */
-.image-secondSection img {
-    width: 350px;
-    height: 350px;
-    object-fit: cover; /* Mantiene la proporción */
-    border-radius: 15%;
+.second-container {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 100px; /* Separar del footer */
+}
+
+.second-title {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    color: #8C5E3C;
+    margin-bottom: 20px;
 }
 
 .button-secondSection {
-    background-color:  #2F4435;; /* Color de fondo */
-    color: #F3E9D2; /* Color del texto */
-    font-size: 16px;
+    background-color: #2F4435;
+    color: #F3E9D2;
+    font-size: clamp(1rem, 2vw, 1.2rem);
     font-weight: bold;
     padding: 12px 24px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.3s ease-in-out; /* Transición suave */
-    position: relative;
-    overflow: hidden;
-    margin-top: 50px; /* Subir el botón 20px */
+    transition: all 0.3s ease-in-out;
 }
 
-/* Efecto hover */
 .button-secondSection:hover {
-    background-color: #34503c; /* Un tono más oscuro */
-    transform: scale(1.05); /* Efecto de aumento */
+    background-color: #34503c;
+    transform: scale(1.05);
 }
 
-/* Efecto de sombra al hacer clic */
 .button-secondSection:active {
     transform: scale(0.95);
 }
 
-/* Animación de brillo */
-.button-secondSection::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease-in-out;
-}
-
-.button-secondSection:hover::after {
-    left: 100%;
-}
-
-@media (max-width: 1500px) {
-    .first-container {
-        height: auto;
-        padding: 0 50px;
-        margin: 5vh auto 20px; /* Reduce el margen inferior */
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .main-title {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
+/* Media Queries para responsive */
+@media (max-width: 768px) {
+    .first-section {
+        height: 30vh; /* Reducir la altura en dispositivos móviles */
     }
 
     .title {
-        font-size: clamp(1.5rem, 4vw, 2.5rem);
-        text-align: center;
-        
-        margin-bottom:5px;
-    }
-
-    .second-section-wrapper {
-        align-items: center;
-        text-align: center;
-        padding: 5px; /* Reduce padding general */
-        margin-bottom: 30px; /* Reduce espacio antes del footer */
-    }
-
-    .second-container {
-        width: 80%;
-        margin: 0 auto;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
     }
 
     .second-title {
-        font-size: clamp(1rem, 2.5vw, 1.5rem);
-        margin-bottom: 10px; /* Reduce espacio entre título y texto */
-        text-align: center;
+        font-size: clamp(1.2rem, 4vw, 1.8rem);
     }
 
     .button-secondSection {
-        align-self: center;
-        margin-top: 15px; /* Reduce espacio antes del botón */
-        padding: 8px 16px;
-        font-size: 1rem;
-        border-radius: 5px;
-    }
-
-    .image-secondSection {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-top: 20px; /* Reduce la separación de la imagen */
-    }
-
-    .image-secondSection img {
-        width: 80%;
-        max-width: 350px;
-        height: auto;
-    }
-
-    /* Reducir espacio entre contenido y footer */
-    footer {
-        margin-top: -20px; /* Ajusta el espacio superior */
-        padding-top: 10px; /* Reduce padding del footer */
-    }
-}
-
-
-
-
-@media (max-width: 900px) {
-    .first-container {
-        padding: 0 40px;
-        margin: 10vh auto 60px;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .title {
-        font-size: clamp(.5rem, 4vw, 1rem);
-        text-align: center;
-        
-    }
-
-    .second-container {
-        width: 90%;
-        margin-top: -150px;
-        margin-bottom: 50px;
-    }
-
-    .second-title {
-        font-size: clamp(1.2rem, 5vw, 1.5rem);
-        text-align: center;
-        margin-top: 35px;
-    }
-
-    .button-secondSection {
-        margin-top: 40px;
-        font-size: 14px;
         padding: 10px 20px;
+        font-size: clamp(0.9rem, 2vw, 1.1rem);
     }
 
-    .image-secondSection img {
-        width: 90%;
-        max-width: 300px;
+    .second-container {
+        margin-bottom: 80px; /* Ajustar margen inferior en móviles */
+    }
+}
+
+@media (max-width: 480px) {
+    .first-section {
+        height: 25vh; /* Reducir aún más la altura en pantallas pequeñas */
+    }
+
+    .title {
+        font-size: clamp(1.2rem, 6vw, 2rem);
+    }
+
+    .second-title {
+        font-size: clamp(1rem, 4vw, 1.5rem);
+    }
+
+    .button-secondSection {
+        padding: 8px 16px;
+        font-size: clamp(0.8rem, 2vw, 1rem);
+    }
+
+    .second-container {
+        margin-bottom: 60px; /* Ajustar margen inferior en pantallas muy pequeñas */
     }
 }
