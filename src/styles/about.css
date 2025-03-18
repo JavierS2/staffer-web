@@ -109,17 +109,7 @@ body, html {
 }
 
 
-/*Animaciones en CSS*/
-.custom-button:hover {
-  background-color: #A08A6F;
-  transform: scale(1.05);
-}
 
-.cursor {
-  font-weight: bold;
-  color: #2F4435;
-  animation: blink 1s infinite;
-}
 
 /* Para pantallas de 1300px o menos (iPad) */
 @media (max-width: 1500px) {
@@ -185,8 +175,9 @@ body, html {
 }
 
 /* Para pantallas de 900px o menos */
-@media (max-width: 900px) {
+@media (max-width: 750px) {
   .content-wrapper {
+      padding-left: 20px;
       padding-top: 10px;
       margin-top: 10vh;
   }
@@ -212,7 +203,7 @@ body, html {
       align-items: center;
       justify-content: flex-start;
       text-align: left;
-      padding-left:10px;
+      padding-left: 30px;
       padding-right: 30px;
       margin-top: -30px;
   }
@@ -222,7 +213,7 @@ body, html {
       align-items: center;
       justify-content: flex-start;
       text-align: left;
-      padding-left:10px;
+      padding-left: 30px;
       padding-right: 30px;
   }
 

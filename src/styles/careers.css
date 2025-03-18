@@ -14,8 +14,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40vh; /* Reducir la altura para acercar el contenido */
+    height: 50vh; /* Reducir la altura para acercar el contenido */
     padding: 0 20px;
+    max-height: 150px;
+    margin-top: 10vh;
 }
 
 .content-wrapper {
@@ -23,7 +25,7 @@ body {
 }
 
 .title {
-    font-size: clamp(2rem, 6vw, 3rem);
+    font-size: clamp(1.5rem, 6vw, 2rem);
     color: #2F4435;
     margin: 0;
 }
@@ -41,18 +43,18 @@ body {
     text-align: center;
     max-width: 1200px;
     margin: 0 auto;
-    margin-top: -50px; /* Acercar más el contenido al texto principal */
+    max-height: 300px;
 }
 
 .second-container {
     width: 100%;
     max-width: 800px;
     text-align: center;
-    margin-bottom: 100px; /* Separar del footer */
+    margin-bottom: 200px; /* Separar del footer */
 }
 
 .second-title {
-    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-size: clamp(1rem, 4vw, 1.5rem);
     color: #8C5E3C;
     margin-bottom: 20px;
 }
@@ -60,67 +62,208 @@ body {
 .button-secondSection {
     background-color: #2F4435;
     color: #F3E9D2;
-    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-size: clamp(0.5rem, 2vw, 0.8rem);
     font-weight: bold;
     padding: 12px 24px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    position: relative; /* Necesario para que ::after funcione */
+    overflow: hidden; /* Evita que el brillo sobresalga */
     transition: all 0.3s ease-in-out;
 }
 
 .button-secondSection:hover {
-    background-color: #34503c;
-    transform: scale(1.05);
+    background-color: #34503c; /* Un tono más oscuro */
+    transform: scale(1.05); /* Efecto de aumento */
 }
 
 .button-secondSection:active {
     transform: scale(0.95);
 }
 
-/* Media Queries para responsive */
-@media (max-width: 768px) {
+/* Efecto brillante */
+.button-secondSection::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: skewX(-30deg); /* Inclina la luz */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Animación del brillo */
+.button-secondSection:hover::after {
+    left: 100%; /* Mueve el brillo de izquierda a derecha */
+    transition: left 0.6s ease-in-out; /* Hace el movimiento suave */
+}
+
+
+
+
+
+/* 700 para abajo*/
+@media (max-width: 700px) {
     .first-section {
-        height: 30vh; /* Reducir la altura en dispositivos móviles */
+        height: 25vh; /* Reducir aún más la altura en pantallas pequeñas */
+        padding: 20px; /* Agregar algo de espacio interno */
     }
 
     .title {
-        font-size: clamp(1.5rem, 6vw, 2.5rem);
+        font-size: clamp(1.2rem, 5vw, 2rem); /* Ajustar el tamaño del título */
+        text-align: center; /* Centrar el texto */
     }
 
     .second-title {
-        font-size: clamp(1.2rem, 4vw, 1.8rem);
+        font-size: clamp(1rem, 3.5vw, 1.5rem); /* Reducir tamaño del subtítulo */
+        text-align: center; /* Centrar el subtítulo */
+        margin-bottom: 10px; /* Ajustar espacio inferior */
     }
 
     .button-secondSection {
-        padding: 10px 20px;
-        font-size: clamp(0.9rem, 2vw, 1.1rem);
+        padding: 8px 15px; /* Reducir padding */
+        font-size: clamp(0.8rem, 1.8vw, 1rem); /* Ajustar tamaño de fuente */
+        margin-top: 5px; /* Reducir margen superior */
     }
 
-    .second-container {
-        margin-bottom: 80px; /* Ajustar margen inferior en móviles */
+    .second-section-wrapper {
+        margin-top: -12vh; /* Ajustar el margen superior para acercar la sección */
+        padding: 0 15px; /* Agregar padding lateral */
+        text-align: center; /* Centrar el contenido */
+    }
+
+    .second-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Alinear al centro */
+        justify-content: center;
+        text-align: center;
+        padding: 10px; /* Reducir el padding */
     }
 }
 
-@media (max-width: 480px) {
+/* 400px para abajo */
+@media (max-width: 400px) {
     .first-section {
-        height: 25vh; /* Reducir aún más la altura en pantallas pequeñas */
+        height: 20vh; /* Reducir la altura aún más */
+        padding: 15px; /* Ajustar el padding */
     }
 
     .title {
-        font-size: clamp(1.2rem, 6vw, 2rem);
+        font-size: clamp(1rem, 4.5vw, 1.8rem); /* Reducir el tamaño del título */
+        text-align: center;
+        margin-bottom: 5px; /* Reducir el margen inferior */
     }
 
     .second-title {
-        font-size: clamp(1rem, 4vw, 1.5rem);
+        font-size: clamp(0.9rem, 3vw, 1.3rem); /* Hacerlo más compacto */
+        text-align: center;
+        margin-bottom: 8px; /* Ajustar separación */
     }
 
     .button-secondSection {
-        padding: 8px 16px;
-        font-size: clamp(0.8rem, 2vw, 1rem);
+        padding: 6px 12px; /* Hacer el botón más pequeño */
+        font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+        margin-top: 5px;
     }
 
-    .second-container {
-        margin-bottom: 60px; /* Ajustar margen inferior en pantallas muy pequeñas */
+    .second-section-wrapper {
+        margin-top: -15vh; /* Reducir margen negativo */
+        padding: 0 10px; /* Ajustar padding lateral */
+        text-align: center;
+    }
+
+    .second-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 5px; /* Reducir el padding */
+    }
+}
+
+/* 300px para abajo */
+@media (max-width: 350px) {
+    .first-section {
+        height: 18vh; /* Reducir la altura */
+        padding: 10px; /* Ajustar el padding */
+    }
+
+    .title {
+        font-size: clamp(0.9rem, 4vw, 1.5rem); /* Reducir tamaño del título */
+        text-align: center;
+        margin-bottom: 4px; /* Menos margen inferior */
+    }
+
+    .second-title {
+        font-size: clamp(0.8rem, 2.8vw, 1.1rem); /* Ajuste de tamaño */
+        margin-top: 40px;
+        text-align: center;
+        margin-bottom: 6px;
+    }
+
+    .button-secondSection {
+        padding: 5px 10px; /* Botón más pequeño */
+        font-size: clamp(0.65rem, 1.3vw, 0.85rem);
+        margin-top: 4px;
+    }
+
+    .second-section-wrapper {
+        margin-top: -12vh; /* Reducir el margen negativo */
+        padding: 0 8px; /* Ajustar padding lateral */
+        text-align: center;
+    }
+
+    .second-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 3px; /* Reducir aún más el padding */
+    }
+}
+
+@media (max-width: 250px) {
+    .first-section {
+        height: 16vh; /* Reducir la altura */
+        padding: 8px; /* Ajustar el padding */
+    }
+
+    .title {
+        font-size: clamp(0.8rem, 3.5vw, 1.3rem); /* Reducir más el tamaño */
+        text-align: center;
+        margin-bottom: 3px; /* Menos espacio abajo */
+    }
+
+    .second-title {
+        font-size: clamp(0.7rem, 2.5vw, 1rem); /* Ajuste de tamaño */
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    .button-secondSection {
+        padding: 4px 8px; /* Botón más compacto */
+        font-size: clamp(0.6rem, 1.2vw, 0.8rem);
+        margin-top: 3px;
+    }
+
+    .second-section-wrapper {
+        margin-top: -10vh; /* Ajustar el margen */
+        padding: 0 5px; /* Reducir padding lateral */
+        text-align: center;
+    }
+
+    .second-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2px; /* Reducir el padding */
     }
 }
