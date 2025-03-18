@@ -19,7 +19,7 @@ import "../styles/careers.css";
     <header>
     <div class="first-container">
             <h1 class="title">
-                <AnimatedTitle text={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel minima dicta minus odit sapiente."} client:load/>
+                <AnimatedTitle text={"Current Openings"} client:load/>
             </h1>
     </div>
   </header>
@@ -27,26 +27,16 @@ import "../styles/careers.css";
     <div class="second-section-wrapper">
         <div class="second-container">
             <h2 class="second-title">
-                <AnimatedSlideInText text={"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, minima et."} 
+                <AnimatedSlideInText text={"Oops, we haven't updated our jobs yet! Check our LinkedIN page for updated postings!."} 
                 client:load/>
             </h2>
-            <p class="second-paragraph">
-                <AnimatedSlideInText text={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas aspernatur velit quae voluptate atque, esse placeat eligendi. Alias, ut magnam? Impedit autem nulla nam doloribus totam quibusdam. Dicta sint optio quas a, delectus explicabo soluta in fuga illum. Odio, esse!"} 
-                client:load/>
-            </p>
+
             <AnimatedSlideInButton 
                 text="BACK" 
                 href='/' 
                 className="button-secondSection" 
                 delay={0} 
                 client:load/> 
-        </div>
-        <div class="image-secondSection">
-            <AnimatedFadeInImage 
-                src="/images/staffer.1a1110.png" 
-                alt="Imagen descriptiva"
-                className="image-secondSection"
-                client:load/>
         </div>
     </div>
     </section>
