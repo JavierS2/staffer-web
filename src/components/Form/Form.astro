@@ -1,21 +1,22 @@
 ---
 import './Form.css'
 ---
-
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
 <div class="container">
     <div class="box-info">
         <h1>CONNECT WITH US</h1>
         <div class="data">
             <p>
-                <ion-icon name="call-outline"></ion-icon> + 1 (661) 425-1335
+                <span class="material-icons">call</span> +1 (661) 425-1335
             </p>
-
             <p>
-                <ion-icon name="mail-outline"></ion-icon> Info@UseStaffer.com
+                <span class="material-icons">email</span> Info@UseStaffer.com
             </p>
-
             <p>
-                <ion-icon name="location-outline"></ion-icon> Los Angeles, CA
+                <span class="material-icons">location_on</span> Los Angeles, CA
             </p>
         </div>
     </div>
@@ -44,8 +45,6 @@ import './Form.css'
     </form>
 </div>
 
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script is:inline>
     document.addEventListener("DOMContentLoaded", () => {
         const form = document.getElementById("contactForm");

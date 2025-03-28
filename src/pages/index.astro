@@ -9,7 +9,6 @@ import '../styles/index.css';
 ---
 
 <Layout>
-  
   <section class="content">
 
     <TitleTransition
@@ -28,10 +27,8 @@ import '../styles/index.css';
       client:load
     />
 
-  
     <h3 class="info-redirect-contact">
       <AnimatedTitle text="Staffer offers a consultative approach to candidate search. With over a decade of combined experience we know how to help you find the best fit for your need." delay={0} typingSpeed={25} client:load />
-
       <br>
       <AnimatedTitle text="If you're a business interested in letting us help you find who you're looking for please click the 'Contact Us' button below and we'll reach out to see how we can help" delay={4400} typingSpeed={25} client:load />
     </h3>
@@ -43,20 +40,18 @@ import '../styles/index.css';
       delay={9000} 
       client:load/>
  
-    <!-- Contenedor de imagen y texto -->
     <div class="image-text-container">
-    <AnimatedFadeInImage 
-        src="/images/STAFFER_AD_2.28.png" 
-        alt="staffer"
-        className="rounded-image"
-        client:load
-    />
+      <AnimatedFadeInImage 
+          src="/images/STAFFER_AD_2.28.png" 
+          alt="staffer"
+          className="rounded-image"
+          client:load
+      />
 
-    <AnimatedText 
-        text="We know sifting through endless resumes, job board profiles, applications, and screening candidates can get overwhelming and expensive! That’s why Staffer is here to help. With personalized solutions for your organizations needs we want to source for you. The best part? You don’t pay a dime until you hire our candidate."
-        className="side-text"
-    client:load/>
-
+      <AnimatedText 
+          text="We know sifting through endless resumes, job board profiles, applications, and screening candidates can get overwhelming and expensive! That’s why Staffer is here to help. With personalized solutions for your organizations needs we want to source for you. The best part? You don’t pay a dime until you hire our candidate."
+          className="side-text"
+      client:load/>
     </div>
   </section>
 </Layout>
